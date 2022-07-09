@@ -8,6 +8,7 @@ const app =  express();
 
 // tells express to look at public folder for styling, images, etc
 app.use(express.static('public'));
+// body parser below can not handle multipart form requests - images can't be packaged as url - too much data when urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
     cookieSession({
