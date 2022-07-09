@@ -1,52 +1,7 @@
 [
   {
     "email": "jinx@cat.com",
-    "password": "cats",
-    "id": "0c575748"
-  },
-  {
-    "email": "diego@boy.com",
-    "password": "boys",
-    "id": "beb8d2f1"
-  },
-  {
-    "email": "jinx@badcat.com",
-    "password": "cats",
-    "id": "d8468d3c"
-  },
-  {
-    "email": "test@test.com",
-    "password": "test",
-    "id": "10877b37"
-  },
-  {
-    "email": "test3@test.com",
-    "password": "password",
-    "id": "fa19d2a4"
-  },
-  {
-    "email": "test5@test.com",
-    "password": "749d2e249c0940cb7be2e83ff5ef3b61b687587c7d4ee64eb71de482ebfef50831fdecf5b1c25375b5fe33ffeb72236a48328b4958226861239a8dda13e95d80.b4553faf910c6dd7",
-    "id": "a28de1fa"
-  },
-  {
-    "email": "test10@test.com",
-    "password": "f0ba96f8b89d0a4515d7581e3e45b1a52e97fd64365c503664e3bb56c9d2427b616388eaeaa0474a3193c1e50e1ed535308220776a566dc775c8f045e49cf87f.611346246f7e4c21",
-    "id": "3f7a1f6e"
-  },
-  {
-    "email": "ugh@ugh.com",
-    "password": "e6afeab731d25a3f4e9429b8d714fe9719c2b2e9c48be0c17f5c910a88c5308107e9ba2fe244f44baac9219292abeb731256a34fd95c693ae9fd2a7145ae7946.e583df6aa2288c80",
-    "id": "1f72cc8e"
-  },
-  {
-    "email": "test5@test.com",
-    "password": "a8193b494dfcd89451568d441b791e89b7bc704ad620de25f17db2d301a17900a9045468759b432b27f3f1f429b07df42cdddc5c9cf7361dda8ffb9907bddbde.7d1ee057f692e582",
-    "id": "225d1722"
-  },
-  {
-    "email": "test5@test.com",
-    "password": "fc83a23cd05de5cc96263c7977aad8eab954f00e6695c89fa31d18da63c9cc886f418225017e016109c57c1a95dc27192197ad693015d8371814caa93a33c392.c1a60608bf795a72",
-    "id": "a2be088f"
+    "password": "343e9573afd562b055ca7ff9a93edae881366c7a1fb7b5182be080951899bc36345922e89f53b1db381610a4e72dd46d56e8e96e34b65f7cda9b83d693b5d444.b94caabe4b61d026",
+    "id": "1a0b0259"
   }
 ]
