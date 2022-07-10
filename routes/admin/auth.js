@@ -28,9 +28,9 @@ router.post(
     const user = await usersRepo.create({ email, password });
     // store the id of that user inside the users cookie  - use cookie-session library to manage cookies
     // req.session - added and maintained by cookie session
-    req.session.userId === user.id;
+    req.session.userId = user.id;
 
-    res.send("Account Created!!");
+    res.redirect("/admin/products");
   }
 );
 
@@ -40,8 +40,7 @@ router.get("/signout", (req, res) => {
 });
 
 router.get("/signin", (req, res) => {
-  res.send(signinTemplate({})
-);
+  res.send(signinTemplate({}));
 });
 
 router.post("/signin", 
@@ -53,7 +52,7 @@ handleErrors(signinTemplate),
   const user = await usersRepo.getOneBy({ email });
 
   req.session.userId = user.id;
-  res.send("You are signed in!");
+  res.redirect("/admin/products");
 });
 
 module.exports = router;

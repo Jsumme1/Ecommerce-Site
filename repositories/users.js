@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const crypto = require('crypto');
 const util = require('util'); 
@@ -7,6 +6,21 @@ const Repository = require('./repository');
 const scrypt = util.promisify(crypto.scrypt)
 
 class UsersRepository extends Repository {
+  async comparePasswords(saved, supplied) {
+    // Saved - password saved in our database. "hashed.salt"
+    // supplied - password enter by user when loggin on
+    // const result = saved.split('.');
+    // const hashed = result[0];
+    // const salt = result[1];
+
+    //  equivalent
+
+    const [hashed, salt] = saved.split(".");
+    const hashedSuppliedBuf = await scrypt(supplied, salt, 64);
+
+    return hashed === hashedSuppliedBuf.toString("hex");
+  }
+  
   async create(attrs) {
     //  attrs === { email: '', password ''}
     // assign random id to user
@@ -27,21 +41,6 @@ class UsersRepository extends Repository {
     await this.writeAll(records);
 
     return record;
-  }
-
-  async comparePasswords(saved, supplied) {
-    // Saved - password saved in our database. "hashed.salt"
-    // supplied - password enter by user when loggin on
-    // const result = saved.split('.');
-    // const hashed = result[0];
-    // const salt = result[1];
-
-    //  equivalent
-
-    const [hashed, salt] = saved.split(".");
-    const hashedSuppliedBuf = await scrypt(supplied, salt, 64);
-
-    return hashed === hashedSuppliedBuf.toString("hex");
   }
 }
 
