@@ -50,8 +50,37 @@ router.post(
 
   });
 
-  router.post('/admin/products/:id/edit', requireAuth, async (req,res) => {
+  router.post(
+    "/admin/products/:id/edit",
+    requireAuth,
+    upload.single("image"),
+    [requireTitle, requirePrice],
+    // add second optional argument if validators above return an error - function will return object to go into template
+    handleErrors(productsEditTemplate, async req => {
+      const product = await productsRepo.getOne(req.params.id);
+      return {product};
+    }),
+    
+    async (req, res) => {
+      //  update the product info
+      const changes =req.body;
+      if(req.file) {
+        changes.image = req.file.buffer.toString('base 64');
+      }
+   try{
+      await productsRepo.update(req.params.id, changes)
+  
+      } catch (err) {
+      return res.send('could not find item');
+   }
+     res.redirect('/admin/products');
+    }
+  );
 
-  });
+  router.post('/admin/products/:id/delete', requireAuth, async (req, res) => {
+    await productsRepo.delete(req.params.id);
+
+    res.redirect('/admin/products');
+  })
 
 module.exports = router;
